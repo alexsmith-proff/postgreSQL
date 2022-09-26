@@ -1,5 +1,5 @@
 interface IUser {
-    id: number,
+    id: string,
     name: string
     email: string
 }

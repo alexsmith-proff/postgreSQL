@@ -40,33 +40,32 @@ $ npm install
 $ npm run start:dev
 
 ```
- ## API
- # Create user
+## API
+ ### Create user
  POST
  http://localhost:3001/user
  BODY
  {
   "name": "Alexey",
   "email": "alexey@mail.ru",
-}
-# Get all users
-GET
-http://localhost:3001/user
-# Get user by id
-GET
-http://localhost:3001/user/1
-# Update user
-PUT
-http://localhost:3001/user/1
-BODY
-{
+ }
+ ### Get all users
+ GET
+ http://localhost:3001/user
+ ### Get user by id
+ GET
+ http://localhost:3001/user/1
+ ### Update user
+ PUT
+ http://localhost:3001/user/1
+ BODY
+ {
   "name": "NewName",
   "email": "new_name@mail.ru"  
-}
-# Delete user
-DELETE
-http://localhost:3001/user/1
-
+ }
+ ### Delete user
+ DELETE
+ http://localhost:3001/user/1
 
 ## License
 

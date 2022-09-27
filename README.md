@@ -29,44 +29,44 @@
 ## Installation
 
 ```bash
+$ cd server
 $ npm install
 ```
 
 ## Running the app
 
 ```bash
-# development
-$ npm run start
 
-# watch mode
 $ npm run start:dev
 
-# production mode
-$ npm run start:prod
 ```
+ ## API
+ # Create user
+ POST
+ http://localhost:3001/user
+ BODY
+ {
+  "name": "Alexey",
+  "email": "alexey@mail.ru",
+}
+# Get all users
+GET
+http://localhost:3001/user
+# Get user by id
+GET
+http://localhost:3001/user/1
+# Update user
+PUT
+http://localhost:3001/user/1
+BODY
+{
+  "name": "NewName",
+  "email": "new_name@mail.ru"  
+}
+# Delete user
+DELETE
+http://localhost:3001/user/1
 
-## Test
-
-```bash
-# unit tests
-$ npm run test
-
-# e2e tests
-$ npm run test:e2e
-
-# test coverage
-$ npm run test:cov
-```
-
-## Support
-
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
-
-## Stay in touch
-
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
 
 ## License
 

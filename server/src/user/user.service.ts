@@ -14,6 +14,9 @@ export class UserService {
   createUser(user: IUser) {
     return from(this.userRepository.save(user))
   }  
+  getAllUsers() {
+    return this.userRepository.find()
+  }
 
   getUserByID(id: string) {
     return this.userRepository.findOneBy({

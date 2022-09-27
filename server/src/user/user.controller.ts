@@ -9,6 +9,10 @@ export class UserController {
     create(@Body() user: IUser) {
         return this.userService.createUser(user)
     }
+    @Get()
+    findAllUsers() {
+        return this.userService.getAllUsers()
+    }
 
     @Get(':id')
     findUserById(

@@ -2,7 +2,7 @@ import { UserEntity } from './user.entity';
 import { Injectable } from '@nestjs/common';
 import { Repository } from 'typeorm';
 import { InjectRepository } from '@nestjs/typeorm';
-import { from } from 'rxjs';
+import { UserDto } from './user.dto';
 
 @Injectable()
 export class UserService {
@@ -11,20 +11,29 @@ export class UserService {
       private readonly userRepository: Repository<UserEntity>
       ) {}
 
-  createUser(user: IUser) {
-    return from(this.userRepository.save(user))
+  createUser(user: UserDto) {
+    return this.userRepository.save(user)
   }  
   getAllUsers() {
-    return this.userRepository.find()
-  }
-
-  getUserByID(id: string) {
-    return this.userRepository.findOneBy({
-      id: id
+    return this.userRepository.find({
+      relations: {        
+        posts: true
+      }
     })
   }
 
-  updateUser(id: string, user: IUser) {
+  getUserByID(id: number) {
+    return this.userRepository.findOne({
+      where: {
+        id
+      },
+      relations: {
+        posts: true
+      }
+    })
+  }
+
+  updateUser(id: string, user: UserDto) {
     return this.userRepository.update(id, user)
   }
 
